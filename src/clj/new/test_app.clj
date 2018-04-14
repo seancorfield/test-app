@@ -1,13 +1,13 @@
-(ns clj.new.app
+(ns clj.new.test-app
   "Generate a basic application project."
   (:require [clj.new.templates :refer [renderer year date project-name
                                        ->files sanitize-ns name-to-path
                                        multi-segment]]))
 
-(defn app
+(defn test-app
   "An application project template."
   [name]
-  (let [render (renderer "app")
+  (let [render (renderer "test_app")
         main-ns (multi-segment (sanitize-ns name))
         data {:raw-name name
               :name (project-name name)
